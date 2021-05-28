@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './layouts/App';
 import reportWebVitals from './reportWebVitals';
+import {Router} from "@reach/router";
+import 'assets/css/mosala-web.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <App path={"/"} />
+  </Router>,
   document.getElementById('root')
 );
 
