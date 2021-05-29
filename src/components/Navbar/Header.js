@@ -32,7 +32,7 @@ const Header = (props) => {
         [" " + classes[color]]: color
     })
     return (
-        <AppBar className={classes.appBar + appBarClasses}>
+        <AppBar className={classes.appBar + appBarClasses} position={"static"}>
             <Toolbar className={classes.container} style={{background: "white"}}>
                 <div className={classes.flex}>
                     <Grid container alignItems={"center"}>
