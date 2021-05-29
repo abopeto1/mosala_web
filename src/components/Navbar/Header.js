@@ -20,6 +20,7 @@ import logo from 'logo.svg'
 import AccountToolbar from "./AccountToolbar";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
+import AppMenu from "./AppMenu";
 
 const useStyles = makeStyles(headerStyle)
 
@@ -51,9 +52,10 @@ const Header = (props) => {
                     <AccountToolbar classes={classes} />
                 </div>
             </Toolbar>
-            <Toolbar className={classes.container}>
-                Menu
+            <Toolbar className={classes.container + " " + classes.flexCenter} style={{paddingTop: 0, paddingBottom: 0}}>
+                <AppMenu />
             </Toolbar>
+            <Divider />
         </AppBar>
     )
 }

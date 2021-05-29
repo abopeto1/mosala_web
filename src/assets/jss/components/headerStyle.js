@@ -48,6 +48,9 @@ const headerStyle = () => ({
     flexEnd: {
         justifyContent: "flex-end"
     },
+    flexCenter: {
+        justifyContent: "center"
+    },
     displayFlex:{
         display: "flex"
     },
