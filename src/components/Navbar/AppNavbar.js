@@ -42,7 +42,7 @@ const AppNavbar = () => {
                         </InputAdornment>),
                         style: {
                             borderRadius: "36px",
-                            width: "750px"
+                            width: "60vw"
                         }
                     }}
                 />

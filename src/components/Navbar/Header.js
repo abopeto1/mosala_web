@@ -9,7 +9,7 @@
 */
 
 import React from "react";
-import {AppBar, Toolbar} from "@material-ui/core";
+import {AppBar, Hidden, Toolbar} from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import headerStyle from "../../assets/jss/components/headerStyle";
 import PropTypes from 'prop-types'
@@ -36,15 +36,23 @@ const Header = (props) => {
                 <div className={classes.flex}>
                     <Grid container alignItems={"center"}>
                         {/* logo */}
-                        <Button color={"transparent"} href={"#"} className={classes.title}><img src={logo} width={64} /></Button>
+                        <Button color={"transparent"} href={"#"} className={classes.title}>
+                            <img src={logo} width={64} alt={"logo"} />
+                            Mosala
+                        </Button>
                         <Divider orientation={"vertical"} flexItem />
                     </Grid>
                 </div>
-                <AppNavbar className={classes.flex} />
+                <Hidden implementation={"css"} smDown>
+                    <AppNavbar className={classes.flex} />
+                </Hidden>
                 <div className={classes.flex}>
                     {/* Account Toolbar */}
                     <AccountToolbar classes={classes} />
                 </div>
+            </Toolbar>
+            <Toolbar className={classes.container}>
+                Menu
             </Toolbar>
         </AppBar>
     )
