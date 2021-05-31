@@ -26,14 +26,18 @@ const ProfileResume = () => {
                 <Typography gutterBottom>Graphic Designer</Typography>
             </Grid>
             <Divider className={classes.divider} />
-            <Typography className={classes.connections}>
+            <Typography className={classes.stats}>
                 <span className={"number"}>2589</span> connections
             </Typography>
             <Divider className={classes.divider} />
-            <Grid container>
-                <Grid item>3450 Profile Views</Grid>
+            <Grid container alignItems={"center"}>
+                <Grid item className={classes.stats+" "+classes.statsDivided}>
+                    <span className={"number"}>3450</span><br /> Profile Views
+                </Grid>
                 <Divider orientation={"vertical"} flexItem />
-                <Grid item>987 Post Views</Grid>
+                <Grid item className={classes.stats+" "+classes.statsDivided}>
+                    <span className={"number"}>987</span><br /> Post Views
+                </Grid>
             </Grid>
             <Divider className={classes.divider} />
             View my profile

@@ -27,12 +27,16 @@ const profileStyle = (theme) => ({
         width: theme.spacing(10),
         height: theme.spacing(10),
     },
-    connections: {
+    stats: {
         paddingTop: theme.spacing(1),
         paddingBottom: theme.spacing(1),
         "& .number": {
             fontWeight: 600,
         }
+    },
+    statsDivided: {
+        padding: theme.spacing(2),
+        flexGrow: 2,
     }
 })
 
