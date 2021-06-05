@@ -37,6 +37,9 @@ const profileStyle = (theme) => ({
     statsDivided: {
         padding: theme.spacing(2),
         flexGrow: 2,
+    },
+    profileLink: {
+        paddingTop: theme.spacing(2),
     }
 })
 

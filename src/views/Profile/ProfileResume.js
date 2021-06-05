@@ -40,7 +40,7 @@ const ProfileResume = () => {
                 </Grid>
             </Grid>
             <Divider className={classes.divider} />
-            View my profile
+            <Grid container justify={"center"} className={classes.profileLink}>View my profile</Grid>
         </Paper>
     )
 }

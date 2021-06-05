@@ -11,12 +11,20 @@
 import {Grid} from "@material-ui/core";
 import React from "react";
 import ProfileResume from "../Profile/ProfileResume";
+import PeopleViewedCardList from "../People/PeopleViewedListCard";
 
 const Home = () => {
     return (
         <Grid container spacing={4}>
             <Grid item sm={3}>
-                <ProfileResume />
+                <Grid container spacing={2} direction={"column"}>
+                    <Grid item>
+                        <ProfileResume />
+                    </Grid>
+                    <Grid item>
+                        <PeopleViewedCardList />
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid item sm={6}>Content</Grid>
             <Grid item sm={3}>Right Side</Grid>
