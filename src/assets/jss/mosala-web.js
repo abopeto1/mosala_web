@@ -89,6 +89,7 @@ const grayColor = [
 ];
 const blackColor = "#000";
 const whiteColor = "#FFF";
+export const blueGradient = "linear-gradient(to left, rgba(11, 223, 249,1), rgb(0, 173, 255, 1))"
 
 const boxShadow = {
     boxShadow:
