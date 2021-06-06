@@ -9,16 +9,15 @@
 */
 
 import React from "react";
-import {AppBar, Hidden, Toolbar} from "@material-ui/core";
+import {AppBar, Container, Hidden, Toolbar} from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import headerStyle from "../../assets/jss/components/headerStyle";
 import PropTypes from 'prop-types'
 import classNames from "classnames";
 import Button from 'components/CustomButton/Button'
-import AppNavbar from "./AppNavbar";
+import SearchBar from "./SearchBar";
 import logo from 'logo.svg'
-import AccountToolbar from "./AccountToolbar";
-import Divider from "@material-ui/core/Divider";
+// import AccountToolbar from "./AccountToolbar";
 import Grid from "@material-ui/core/Grid";
 import AppMenu from "./AppMenu";
 
@@ -32,30 +31,38 @@ const Header = (props) => {
         [" " + classes[color]]: color
     })
     return (
-        <AppBar className={classes.appBar + appBarClasses} position={"static"}>
-            <Toolbar className={classes.container} style={{background: "white"}}>
-                <div className={classes.flex}>
-                    <Grid container alignItems={"center"}>
-                        {/* logo */}
-                        <Button color={"transparent"} href={"#"} className={classes.title}>
-                            <img src={logo} width={64} alt={"logo"} />
-                            Mosala
-                        </Button>
-                        <Divider orientation={"vertical"} flexItem />
+        <AppBar className={classes.appBar + appBarClasses} style={{background: "#1d2f38",}} position={"fixed"}>
+            <Container className={classes.container}>
+                <Toolbar className={classes.container}>
+                    <Grid container>
+                        <Grid item sm={2} style={{alignSelf: "center"}}>
+                            <Grid container>
+                                {/* logo */}
+                                <Button color={"transparent"} href={"#"} className={classes.title}>
+                                    <img src={logo} width={48} alt={"logo"} />
+                                    Mosala
+                                </Button>
+                            </Grid>
+                        </Grid>
+                        <Grid item sm={4} style={{alignSelf: "center"}}>
+                            <Hidden implementation={"css"} smDown>
+                                <SearchBar />
+                            </Hidden>
+                        </Grid>
+                        <Grid item sm={6}>
+                            {/*    /!* Account Toolbar *!/*/}
+                            <AppMenu />
+                        </Grid>
                     </Grid>
-                </div>
-                <Hidden implementation={"css"} smDown>
-                    <AppNavbar className={classes.flex} />
-                </Hidden>
-                <div className={classes.flex}>
-                    {/* Account Toolbar */}
-                    <AccountToolbar classes={classes} />
-                </div>
-            </Toolbar>
-            <Toolbar className={classes.container + " " + classes.flexCenter} style={{paddingTop: 0, paddingBottom: 0}}>
-                <AppMenu />
-            </Toolbar>
-            <Divider />
+                    {/*<div className={classes.flex}>*/}
+
+                    {/*    /!*<AccountToolbar classes={classes} />*!/*/}
+                    {/*</div>*/}
+                </Toolbar>
+                {/*<Toolbar className={classes.container + " " + classes.flexCenter} style={{paddingTop: 0, paddingBottom: 0}}>*/}
+                {/*    <AppMenu />*/}
+                {/*</Toolbar>*/}
+            </Container>
         </AppBar>
     )
 }

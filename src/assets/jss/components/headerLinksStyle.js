@@ -18,8 +18,12 @@ import dropdownStyle from "assets/jss/dropdownStyle";
 const headerLinksStyle = (theme) => ({
     ...dropdownStyle(theme),
     search: {
+        width: "100%",
         "& > div": {
             marginTop: "0",
+            height: "36px",
+            color: "white",
+            background: "#132028",
         },
         [theme.breakpoints.down("sm")]: {
             margin: "10px 15px !important",
@@ -116,6 +120,7 @@ const headerLinksStyle = (theme) => ({
             margin: "10px 15px 0",
         },
         display: "inline-block",
+        width: "100%",
     },
 });
 

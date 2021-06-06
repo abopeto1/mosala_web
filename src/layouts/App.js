@@ -16,7 +16,7 @@ const App = () => {
         <div className={classes.wrapper}>
             <CssBaseline />
             <Header />
-            <Container style={{paddingTop: "200px",}}>{switchRoutes(appRoutes)}</Container>
+            <Container style={{paddingTop: "64px",}}>{switchRoutes(appRoutes)}</Container>
         </div>
   );
 }

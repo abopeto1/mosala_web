@@ -12,30 +12,34 @@ import MenuItem from "@material-ui/core/MenuItem";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import appMenuStyle from "../../assets/jss/components/appMenuStyle";
 import MenuList from "@material-ui/core/MenuList";
-import {Home, Message, Notifications, People, Work} from "@material-ui/icons";
+import {
+    DashboardOutlined,MessageOutlined,
+    Notifications, PeopleOutlineOutlined,
+    SettingsOutlined,
+} from "@material-ui/icons";
 
 const useStyles = makeStyles(appMenuStyle)
 
 const menus = [
     {
         title: "Home",
-        icon: Home,
+        icon: PeopleOutlineOutlined,
     },
     {
         title: "My Network",
-        icon: People,
+        icon: MessageOutlined,
     },
     {
         title: "Jobs",
-        icon: Work,
+        icon: Notifications,
     },
     {
         title: "Messaging",
-        icon: Message,
+        icon: SettingsOutlined,
     },
     {
         title: "Notifications",
-        icon: Notifications,
+        icon: DashboardOutlined,
     },
 ]
 const AppMenu = () => {
@@ -45,9 +49,9 @@ const AppMenu = () => {
         <MenuList className={classes.root}>
             {
                 menus.map((menu, key) => (
-                    <MenuItem className={classes.menuItem}>
-                        <menu.icon style={{fontSize: 32}}/>
-                        {menu.title}
+                    <MenuItem className={classes.menuItem} key={key}>
+                        <menu.icon className={classes.icon}/>
+                        {/*{menu.title}*/}
                     </MenuItem>
                 ))
             }

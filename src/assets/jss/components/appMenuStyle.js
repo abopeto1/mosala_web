@@ -12,11 +12,16 @@ const appMenuStyle = () => ({
         display: "flex",
         paddingTop:0,
         paddingBottom: 0,
+        justifyContent: "flex-end"
     },
     menuItem:{
         display: "flex",
         flexDirection: "column",
-        padding: "16px 36px",
+        padding: "16px 16px",
+    },
+    icon: {
+        fontSize: 24,
+        color: "#ced5d9",
     }
 })
 

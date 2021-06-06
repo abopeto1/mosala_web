@@ -53,10 +53,10 @@ const transition = {
 };
 
 const container = {
-    paddingTop: "10px",
+    // paddingTop: "10px",
     paddingRight: "15px",
     paddingLeft: "15px",
-    paddingBottom: "10px",
+    // paddingBottom: "10px",
     marginRight: "auto",
     marginLeft: "auto",
 };
