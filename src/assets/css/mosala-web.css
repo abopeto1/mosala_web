@@ -8,6 +8,13 @@
  =========================================================
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/GothamBook.ttf");
+    /*src: url("CustomFont.woff") format("woff"),*/
+    /*url("CustomFont.otf") format("opentype"),*/
+    /*url("CustomFont.svg#filename") format("svg");*/
+}
 .ct-grid {
     stroke: rgba(255, 255, 255, 0.2);
     stroke-width: 1px;
@@ -60,7 +67,7 @@ body {
     background-color: #eeeeee;
     color: #3c4858;
     margin: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Gotham, Roboto, Helvetica, Arial, sans-serif;
     font-weight: 300;
     line-height: 1.5em;
 }
@@ -122,7 +129,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Gotham", "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.5em;
 }
@@ -234,7 +241,7 @@ footer ul li a:hover {
     }
 }
 .fixed-plugin {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Gotham", "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.5em;
     position: fixed;

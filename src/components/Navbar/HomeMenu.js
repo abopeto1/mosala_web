@@ -7,7 +7,7 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-import React, {useState} from "react";
+import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Tab, Tabs} from "@material-ui/core";
 import homeMenuStyle from "../../assets/jss/components/homeMenuStyle";
@@ -29,8 +29,8 @@ const homeMenu = [
     },
 ]
 
-const HomeMenu = () => {
-    const [value, setValue] = useState(0)
+const HomeMenu = (props) => {
+    const {value, setValue} = props
     const classes = useStyles()
 
     const handleChange = (e, newValue) => setValue(newValue)
@@ -41,7 +41,7 @@ const HomeMenu = () => {
         }}>
             {
                 homeMenu.map((menu, key) => (
-                    <Tab label={menu.name} key={key} className={classes.option} />
+                    <Tab label={menu.name} key={key} className={classes.option} value={menu.name.toLowerCase()} />
                 ))
             }
         </Tabs>

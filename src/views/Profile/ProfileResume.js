@@ -10,8 +10,9 @@
 import React from 'react'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Paper from "@material-ui/core/Paper";
-import {Avatar, Divider, Grid, Typography} from "@material-ui/core";
+import {Divider, Grid, Typography} from "@material-ui/core";
 import profileStyle from "../../assets/jss/views/profileStyle";
+import image from "assets/images/adele.jpg"
 
 const useStyles = makeStyles(profileStyle)
 
@@ -20,27 +21,30 @@ const ProfileResume = () => {
 
     return (
         <Paper className={classes.paper}>
-            <Grid container direction={"column"} alignItems={"center"}>
-                <Avatar alt={"Arnold Bopeto"} className={classes.largeAvatar} />
-                <Typography variant={'h6'} gutterBottom className={classes.profileTitle}>Hugo boss</Typography>
-                <Typography gutterBottom>Graphic Designer</Typography>
-            </Grid>
-            <Divider className={classes.divider} />
-            <Typography className={classes.stats}>
-                <span className={"number"}>2589</span> connections
-            </Typography>
-            <Divider className={classes.divider} />
-            <Grid container alignItems={"center"}>
-                <Grid item className={classes.stats+" "+classes.statsDivided}>
-                    <span className={"number"}>3450</span><br /> Profile Views
-                </Grid>
-                <Divider orientation={"vertical"} flexItem />
-                <Grid item className={classes.stats+" "+classes.statsDivided}>
-                    <span className={"number"}>987</span><br /> Post Views
+            <Grid container direction={"column"}>
+                <Grid
+                    item className={classes.image}
+                    style={{
+                        backgroundImage: `url(${image})`,
+                        backgroundSize: "cover",
+                    }}
+                />
+                <Grid item>
+                    <Typography className={classes.profileTitle}>Adele Adkins</Typography>
+                    <Typography className={classes.profileFunction}>Interaction Designer @Google</Typography>
                 </Grid>
             </Grid>
-            <Divider className={classes.divider} />
-            <Grid container justify={"center"} className={classes.profileLink}>View my profile</Grid>
+            <Divider />
+            <Grid item>
+                <Grid container justify={"space-between"} className={classes.stats}>
+                    <Grid item>Connection</Grid>
+                    <Grid item className={"number"}>564</Grid>
+                </Grid>
+                <Grid container justify={"space-between"} className={classes.stats}>
+                    <Grid item>Profile Views</Grid>
+                    <Grid item className={"number"}>81</Grid>
+                </Grid>
+            </Grid>
         </Paper>
     )
 }

@@ -2,7 +2,6 @@ import Header from "../components/Navbar/Header";
 import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import appStyle from "../assets/jss/layout/appStyle";
-import {Container} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {switchRoutes} from "../utils/switchRoutes";
 import {appRoutes} from "../routes";

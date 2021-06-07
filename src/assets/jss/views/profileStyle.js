@@ -7,40 +7,50 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import {blackColor, blueColor, grayColor, title} from "../mosala-web";
+
 const profileStyle = (theme) => ({
     root: {
         flexGrow: 1,
     },
     paper: {
-        padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
+        paddingBottom: theme.spacing(2),
+    },
+    image: {
+        width: "100%",
+        paddingBottom: "100%",
+        height: 0,
     },
     profileTitle: {
-        textTransform: "capitalize",
+        ...title,
         fontWeight: 600,
-    },
-    divider: {
-        margin: "0 -16px",
-    },
-    largeAvatar: {
-        width: theme.spacing(10),
-        height: theme.spacing(10),
+        color: blackColor,
+        marginTop: theme.spacing(1),
+        marginBottom: 0,
+        fontSize: "1rem",
     },
     stats: {
-        paddingTop: theme.spacing(1),
+        paddingRight: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
         paddingBottom: theme.spacing(1),
+        paddingTop: theme.spacing(1),
         "& .number": {
-            fontWeight: 600,
+            color: blueColor[1],
         }
+    },
+    profileFunction: {
+        ...title,
+        fontSize: ".8rem",
+        marginTop: 0,
+        marginBottom: theme.spacing(1),
+        color: grayColor[0]
     },
     statsDivided: {
         padding: theme.spacing(2),
         flexGrow: 2,
     },
-    profileLink: {
-        paddingTop: theme.spacing(2),
-    }
 })
 
 export default profileStyle
