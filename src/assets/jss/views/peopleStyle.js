@@ -33,6 +33,29 @@ const peopleStyle = theme => ({
         marginTop: 0,
         marginBottom: 0,
         fontSize: "1rem",
+    },
+    subtitle: {
+        ...title,
+        fontWeight: 400,
+        color: grayColor[0],
+        marginTop: 0,
+        marginBottom: 0,
+        paddingLeft: theme.spacing(2),
+        paddingTop: theme.spacing(2),
+        fontSize: ".8rem",
+    },
+    chart: {
+        "& .ct-area": {
+            fill: "blue"
+        },
+        "& .ct-label": {
+            color: grayColor[0],
+            fontSize: ".8rem",
+        },
+        "& .ct-line": {
+            stroke: blueColor[0],
+            strokeWidth: 2,
+        }
     }
 })
 

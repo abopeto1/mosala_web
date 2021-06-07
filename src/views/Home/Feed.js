@@ -8,7 +8,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import React from "react";
-import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import PeopleViewedCardList from "../People/PeopleViewedListCard";
 import ProfileResume from "../Profile/ProfileResume";
