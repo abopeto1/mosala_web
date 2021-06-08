@@ -13,6 +13,7 @@ import PeopleViewedCardList from "../People/PeopleViewedListCard";
 import ProfileResume from "../Profile/ProfileResume";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import feedStyle from "../../assets/jss/components/feedStyle";
+import CreatePost from "../Post/CreatePost";
 
 const useStyles = makeStyles(feedStyle)
 
@@ -25,7 +26,9 @@ const Feed = () => {
                 <ProfileResume />
                 <PeopleViewedCardList />
             </Grid>
-            <Grid item sm={6}>Content</Grid>
+            <Grid item sm={6}>
+                <CreatePost />
+            </Grid>
             <Grid item sm={3}>Right Side</Grid>
         </Grid>
     )

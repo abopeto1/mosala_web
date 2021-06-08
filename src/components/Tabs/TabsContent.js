@@ -10,15 +10,15 @@
 import {Container} from "@material-ui/core";
 import React from "react";
 
-const HomeContent = props => {
+const TabsContent = props => {
     const {children, value, index} = props
 
     return (
         <div
             role={"tabpanel"}
             hidden={value !== index}
-            id={`home-tabpanel-${index}`}
-            aria-labelledby={`home-tabpanel-${index}`}
+            id={`tabpanel-${index}`}
+            aria-labelledby={`tabpanel-${index}`}
         >
             {
                 value === index && (
@@ -29,4 +29,4 @@ const HomeContent = props => {
     )
 }
 
-export default HomeContent
+export default TabsContent

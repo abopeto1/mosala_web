@@ -32,7 +32,7 @@ const peopleStyle = theme => ({
         color: blackColor,
         marginTop: 0,
         marginBottom: 0,
-        fontSize: "1rem",
+        fontSize: ".95rem",
     },
     subtitle: {
         ...title,

@@ -81,7 +81,7 @@ const PeopleViewedCardList = () => {
     return (
         <Card>
             <CardHeader
-                title={<Typography className={classes.title}>People also viewed</Typography>}
+                title={<Typography className={classes.title}>People views</Typography>}
             />
             <Divider />
             <CardContent className={classes.cardContent} style={{paddingBottom: 0,}}>

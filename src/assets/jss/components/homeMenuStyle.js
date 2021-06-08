@@ -17,12 +17,23 @@ const homeMenuStyle = theme => ({
     option: {
         minWidth: 96,
         "& .MuiTab-wrapper": {
-            marginBottom: theme.spacing(2)
+            marginBottom: theme.spacing(2),
+            display: "flex",
+            alignContent:"center",
+            justifyContent: "space-evenly",
+            flexDirection: "row",
+            alignItems: "center",
         },
-        "& .Mui-selected .MuiTab-wrapper": {
+        "&.Mui-selected .MuiTab-wrapper": {
             fontWeight: 600,
-            background: "blue"
-        }
+        },
+        // "&.Mui-selected .MuiSvgIcon-root": {
+        //     color: blueGradient,
+        //     "-webkit-background-clip": "text",
+        //     "-webkit-text-fill-color": "transparent",
+        //     backgroundSize: "100%",
+        //     backgroundRepeat: "repeat",
+        // }
     }
 })
 
