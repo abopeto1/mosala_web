@@ -6,9 +6,13 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import {switchRoutes} from "../utils/switchRoutes";
 import {appRoutes} from "../routes";
 
+type Props = {
+    path: string
+}
+// @ts-ignore
 const useStyles = makeStyles(appStyle)
 
-const App = () => {
+export const App: React.VoidFunctionComponent<Props> = ({path}: Props) => {
     const classes = useStyles()
 
     return (
@@ -19,5 +23,3 @@ const App = () => {
         </div>
   );
 }
-
-export default App;

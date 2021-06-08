@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './layouts/App';
+import {App} from './layouts/App';
 import reportWebVitals from './reportWebVitals';
 import {Router} from "@reach/router";
 import 'assets/css/mosala-web.css'
