@@ -17,12 +17,14 @@ const homeMenuStyle = theme => ({
     option: {
         minWidth: 96,
         "& .MuiTab-wrapper": {
-            marginBottom: theme.spacing(2),
+            marginBottom: theme.spacing(0),
             display: "flex",
             alignContent:"center",
             justifyContent: "space-evenly",
             flexDirection: "row",
             alignItems: "center",
+            textTransform: "none",
+            fontSize: "1rem"
         },
         "&.Mui-selected .MuiTab-wrapper": {
             fontWeight: 600,
