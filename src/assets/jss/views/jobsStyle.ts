@@ -9,6 +9,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import {Theme} from "@material-ui/core";
+import {blackColor, grayColor} from "../mosala-web";
 
 const jobsStyle = (theme: Theme) => ({
     root: {
@@ -16,7 +17,21 @@ const jobsStyle = (theme: Theme) => ({
     },
     content: {
         padding: theme.spacing(2),
-    }
+    },
+    headTitle: {
+        fontWeight: 600,
+        color: blackColor,
+        marginTop: theme.spacing(1),
+        marginBottom: 0,
+        fontSize: "1rem",
+    },
+    subTitle: {
+        fontSize: ".8rem",
+        marginTop: 0,
+        marginBottom: theme.spacing(1),
+        color: grayColor[0],
+        "margin-bottom": theme.spacing(2)
+    },
 })
 
 export default jobsStyle

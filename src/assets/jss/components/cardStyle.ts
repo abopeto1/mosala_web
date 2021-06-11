@@ -59,6 +59,18 @@ const cardStyle = (theme: Theme) => ({
     jobInfos: {
         display: "flex",
         "flex-direction": "column",
+    },
+    smallAvatar: {
+        width: theme.spacing(3),
+        height: theme.spacing(3),
+    },
+    jobCard: {
+        padding: theme.spacing(2),
+        "& hr": {
+            "margin-right": "50%",
+            marginTop: theme.spacing(2),
+            marginBottom: theme.spacing(2),
+        }
     }
 })
 

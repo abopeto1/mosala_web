@@ -153,7 +153,7 @@ legend {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
     font-family: "Gotham", "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: .85rem;
+    font-size: .9rem;
 }
 
 *:focus {

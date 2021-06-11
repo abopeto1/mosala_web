@@ -72,9 +72,33 @@ const Jobs = () => {
                             <Grid item xs={12} sm={6}>
                                 <JobCard />
                             </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
                         </Grid>
                     </TabsContent>
                 </Paper>
+            </Grid>
+            <Grid item sm={3}>
+                <div className={classes.headTitle}>Because you viewed</div>
+                <div className={classes.subTitle}>Visual designer at Google</div>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <JobCard />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <JobCard />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     )

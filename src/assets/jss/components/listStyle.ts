@@ -51,11 +51,11 @@ export const listStyle = (theme: Theme) => ({
         }
     },
     noScrollbar: {
-        "scrollbar-width": "none",
-        marginBottom: 0,
-        paddingBottom: 0,
-        "&::-webkit-scrollbar":{
-            display: "none",
-        }
+        // "scrollbar-width": "none",
+        // marginBottom: 0,
+        // paddingBottom: 0,
+        // "&::-webkit-scrollbar":{
+        //     display: "none",
+        // }
     }
 })
