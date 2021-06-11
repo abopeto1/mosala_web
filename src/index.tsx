@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {Router} from "@reach/router";
 import 'assets/css/mosala-web.css'
 import '@fontsource/roboto';
+import 'react-perfect-scrollbar/dist/css/styles.min.css'
 
 ReactDOM.render(
   <Router>

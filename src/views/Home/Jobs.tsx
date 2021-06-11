@@ -19,6 +19,7 @@ import AppTabs from "../../components/Tabs/Tabs";
 import jobsOptions from "../../variables/jobsOptions";
 import {TabsContent} from "../../components/Tabs/TabsContent";
 import {HorizList} from "../../components/List/HorizList";
+import {JobCard} from "../../components/Card/JobCard";
 
 const useStyles = makeStyles(jobsStyle)
 
@@ -64,6 +65,14 @@ const Jobs = () => {
                     />
                     <TabsContent value={value} index={jobsOptions[0].name.toLowerCase()}>
                         <HorizList />
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <JobCard />
+                            </Grid>
+                        </Grid>
                     </TabsContent>
                 </Paper>
             </Grid>

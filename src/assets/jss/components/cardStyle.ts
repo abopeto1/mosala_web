@@ -10,7 +10,7 @@
 */
 
 import {Theme} from "@material-ui/core/styles/createMuiTheme";
-import {blackColor, grayColor, title} from "../mosala-web";
+import {blackColor, blueColor, grayColor, title} from "../mosala-web";
 
 const cardStyle = (theme: Theme) => ({
     root: {
@@ -29,7 +29,7 @@ const cardStyle = (theme: Theme) => ({
         paddingRight: 0,
     },
     paper: {
-        textAlign: 'center',
+        "text-align": 'center',
         color: theme.palette.text.secondary,
         paddingBottom: theme.spacing(2),
     },
@@ -51,6 +51,15 @@ const cardStyle = (theme: Theme) => ({
         marginBottom: theme.spacing(1),
         color: grayColor[0]
     },
+    company:{
+        color: blueColor[0],
+        fontWeight: 600,
+        fontSize: ".85rem"
+    },
+    jobInfos: {
+        display: "flex",
+        "flex-direction": "column",
+    }
 })
 
 export default cardStyle
