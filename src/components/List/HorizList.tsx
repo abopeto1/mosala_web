@@ -22,16 +22,29 @@ export const HorizList = () => {
         <div className={classes.container}>
             <ul className={classes.hs+ " full "  + classes.noScrollbar }>
                 <li className={"item"}>
+                    <Button variant={"outlined"}>All</Button>
+                </li>
+                <li className={"item"}>
                     <Button variant={"outlined"}>Design</Button>
                 </li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
-                <li className={"item"}>Arn</li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>React</Button>
+                </li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>IT</Button>
+                </li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>Community Manager</Button>
+                </li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>Design</Button>
+                </li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>Design</Button>
+                </li>
+                <li className={"item"}>
+                    <Button variant={"outlined"}>Design</Button>
+                </li>
             </ul>
         </div>
     )
