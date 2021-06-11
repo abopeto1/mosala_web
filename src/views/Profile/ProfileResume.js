@@ -12,7 +12,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import Paper from "@material-ui/core/Paper";
 import {Divider, Grid, Typography} from "@material-ui/core";
 import profileStyle from "../../assets/jss/views/profileStyle";
-import image from "assets/images/adele.jpg"
+import image from "../../assets/images/adele.jpg"
 
 const useStyles = makeStyles(profileStyle)
 

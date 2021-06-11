@@ -10,6 +10,7 @@
 import {blueGradient} from "../mosala-web";
 
 const homeMenuStyle = theme => ({
+    root:{},
     indicator: {
         backgroundImage: blueGradient,
         height: theme.spacing(.5)

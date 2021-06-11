@@ -12,11 +12,11 @@
 import React, {useState} from 'react'
 import Paper from "@material-ui/core/Paper";
 import {createTabsMenu} from "../../variables/createPostTabs";
-import AppTabs from "../../components/Tabs/Tabs";
+import AppTabs from "../Tabs/Tabs";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {postStyle} from "../../assets/jss/views/postStyle";
 import {Divider, Typography} from "@material-ui/core";
-import TabsContent from "../../components/Tabs/TabsContent";
+import {TabsContent} from "../Tabs/TabsContent";
 
 const useStyles = makeStyles(postStyle)
 

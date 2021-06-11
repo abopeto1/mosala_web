@@ -7,9 +7,10 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-import {blackColor, blueColor, grayColor, title} from "../mosala-web";
+import {blackColor, blueColor, goodBlackColor, grayColor, title} from "../mosala-web";
+import {Theme} from "@material-ui/core";
 
-const peopleStyle = theme => ({
+const peopleStyle = (theme: Theme) => ({
     cardContent: {
         padding: 0,
     },
@@ -23,7 +24,7 @@ const peopleStyle = theme => ({
         },
         "& .number": {
             color: blueColor[1],
-            fontSize: '1.2rem'
+            fontSize: '1.2rem',
         },
     },
     title: {
@@ -55,6 +56,30 @@ const peopleStyle = theme => ({
         "& .ct-line": {
             stroke: blueColor[0],
             strokeWidth: 2,
+        }
+    },
+    listItem: {
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
+    name: {
+        fontWeight: 600,
+        color: goodBlackColor,
+        marginTop: 0,
+        marginBottom: 0,
+        fontSize: "1rem",
+    },
+    buttonGradient: {
+        // overflow: "hidden",
+        // borderImageSource: blueGradient,
+        // borderImageSlice: 1,
+        // borderWidth: "3px",
+        // borderRadius: "4px",
+        width: "100%",
+        "& .MuiButton-label": {
+            fontSize: ".7rem",
+            color: blueColor[1],
+            fontWeight: 600,
         }
     }
 })

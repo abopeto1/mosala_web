@@ -92,6 +92,7 @@ export const blueColor = [
     "rgba(0, 173, 255, 1)"
 ]
 const blackColor = "#000";
+export const goodBlackColor = "rgba(0,0,0,.9)"
 const whiteColor = "#FFF";
 export const blueGradient = "linear-gradient(to left, rgba(11, 223, 249,1), rgba(0, 173, 255, 1))"
 

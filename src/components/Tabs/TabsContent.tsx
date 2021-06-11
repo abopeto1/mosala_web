@@ -7,10 +7,14 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-import {Container} from "@material-ui/core";
 import React from "react";
 
-const TabsContent = props => {
+type TabsContentProps = {
+    value: string;
+    index: string|number;
+}
+
+export const TabsContent: React.FC<TabsContentProps> = (props) => {
     const {children, value, index} = props
 
     return (
@@ -21,12 +25,8 @@ const TabsContent = props => {
             aria-labelledby={`tabpanel-${index}`}
         >
             {
-                value === index && (
-                    <Container>{children}</Container>
-                )
+                value === index && children
             }
         </div>
     )
 }
-
-export default TabsContent

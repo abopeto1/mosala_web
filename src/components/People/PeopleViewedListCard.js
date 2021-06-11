@@ -78,6 +78,7 @@ const PeopleViewedCardList = () => {
             }
         }
     }
+
     return (
         <Card>
             <CardHeader

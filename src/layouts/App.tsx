@@ -9,6 +9,7 @@ import {appRoutes} from "../routes";
 type Props = {
     path: string
 }
+
 // @ts-ignore
 const useStyles = makeStyles(appStyle)
 

@@ -8,13 +8,14 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import {Toolbar} from "@material-ui/core";
+import {Container, Toolbar} from "@material-ui/core";
 import React, {useState} from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import homeStyle from "../../assets/jss/views/homeStyle";
 import HomeMenu from "../../components/Navbar/HomeMenu";
 import Feed from "./Feed";
-import TabsContent from "../../components/Tabs/TabsContent";
+import Jobs from "./Jobs";
+import {TabsContent} from "../../components/Tabs/TabsContent";
 
 const useStyles = makeStyles(homeStyle)
 
@@ -27,18 +28,20 @@ const Home = () => {
             <Toolbar className={classes.toolbar}>
                 <HomeMenu value={value} setValue={v => setValue(v)} />
             </Toolbar>
-            <TabsContent value={value} index={"feed"}>
-                <Feed />
-            </TabsContent>
-            <TabsContent value={value} index={"jobs"}>
-                Jobs
-            </TabsContent>
-            <TabsContent value={value} index={"trending"}>
-                Trending
-            </TabsContent>
-            <TabsContent value={value} index={"discover"}>
-                Discover
-            </TabsContent>
+            <Container>
+                <TabsContent value={value} index={"feed"}>
+                    <Feed />
+                </TabsContent>
+                <TabsContent value={value} index={"jobs"}>
+                    <Jobs />
+                </TabsContent>
+                <TabsContent value={value} index={"trending"}>
+                    Trending
+                </TabsContent>
+                <TabsContent value={value} index={"discover"}>
+                    Discover
+                </TabsContent>
+            </Container>
         </div>
     )
 }

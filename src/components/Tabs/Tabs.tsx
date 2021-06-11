@@ -9,19 +9,28 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {ChangeEvent} from 'react'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Tab, Tabs} from "@material-ui/core";
 import homeMenuStyle from "../../assets/jss/components/homeMenuStyle";
 
+type AppTabsProps = {
+    width: "standard" | "fullWidth" | "scrollable";
+    value: string;
+    setValue: (newValue: string) => void;
+    options: Array<{
+        name: string;
+        icon?: any;
+    }>;
+}
+
 const useStyles = makeStyles(homeMenuStyle)
 
-const AppTabs = ({width = "standard", ...props}) => {
+const AppTabs = ({width = "standard", ...props}: AppTabsProps) => {
     const {value, setValue, options} = props
     const classes = useStyles()
 
-    const handleChange = (e, newValue) => setValue(newValue)
+    const handleChange = (e: ChangeEvent<{}>,newValue: string) => setValue(newValue)
 
     return (
         <Tabs
@@ -30,7 +39,7 @@ const AppTabs = ({width = "standard", ...props}) => {
             className={classes.root}
             classes={{
                 indicator: classes.indicator
-            }} {...props}
+            }}
         >
             {
                 options.map((menu, key) => (
@@ -41,14 +50,4 @@ const AppTabs = ({width = "standard", ...props}) => {
     )
 }
 
-AppTabs.propTypes = {
-    value: PropTypes.string.isRequired,
-    setValue: PropTypes.func.isRequired,
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string.isRequired,
-        })
-    ),
-    width: PropTypes.oneOf(["fullWidth", "standard", "scrollable"]),
-}
 export default AppTabs

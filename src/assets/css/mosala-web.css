@@ -152,6 +152,8 @@ legend {
 * {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
+    font-family: "Gotham", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: .85rem;
 }
 
 *:focus {
@@ -175,6 +177,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 legend {
     margin-bottom: 20px;
     font-size: 21px;
+}
+
+button {
+    font-family: "Gotham", "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 output {

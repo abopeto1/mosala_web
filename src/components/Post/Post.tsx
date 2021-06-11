@@ -41,10 +41,18 @@ export const Post = () => {
                 action={<IconButton><MoreVertOutlined /></IconButton>}
                 title={"Tobia Crivelia"}
                 subheader={"Product Designer at Yelp"}
+                classes={{
+                    title: classes.name,
+                }}
             />
             <CardContent>
                 <Divider />
-                <Typography variant={"body2"} color={"textSecondary"} component={"p"} className={classes.paddingHorizontal}>
+                <Typography
+                    variant={"body1"} color={"textSecondary"} component={"p"} className={classes.paddingHorizontal}
+                    classes={{
+                        body1: classes.textContent,
+                    }}
+                >
                     Join in the Product Expert Competition of Xinhua Silk Road, a famous media institution in China. See what the winner can get here: https://lnkd.in/fJh8XYz
                 </Typography>
                 <Grid container alignItems={"center"} spacing={2} className={classes.paddingHorizontal}>
