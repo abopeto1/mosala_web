@@ -19,6 +19,7 @@ import PeopleToConnectListItem from "../../components/People/PeopleToConnectList
 import {List} from "@material-ui/core";
 import ImageCard from "../../components/Card/ImageCard";
 import image from "../../assets/images/adele.jpg"
+import {Link} from "@reach/router";
 
 const useStyles = makeStyles(feedStyle)
 
@@ -30,7 +31,7 @@ const Feed = () => {
             <Grid item sm={3} className={classes.column}>
                 <ImageCard
                     image={image}
-                    headTitle={"Adele Adkins"}
+                    headTitle={<Link to={"/profile"}>Adele Adkins</Link>}
                     subTitle={"Interaction Designer @Google"}
                     action={
                         <div>

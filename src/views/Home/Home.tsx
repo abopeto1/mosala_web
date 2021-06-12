@@ -16,17 +16,18 @@ import HomeMenu from "../../components/Navbar/HomeMenu";
 import Feed from "./Feed";
 import Jobs from "./Jobs";
 import {TabsContent} from "../../components/Tabs/TabsContent";
+import {RouteComponentProps} from "@reach/router";
 
 const useStyles = makeStyles(homeStyle)
 
-const Home = () => {
+const Home = (props: RouteComponentProps) => {
     const classes = useStyles()
     const [value, setValue] = useState("feed")
 
     return (
         <div>
             <Toolbar className={classes.toolbar}>
-                <HomeMenu value={value} setValue={v => setValue(v)} />
+                <HomeMenu value={value} setValue={(v: string) => setValue(v)} />
             </Toolbar>
             <Container>
                 <TabsContent value={value} index={"feed"}>
@@ -36,10 +37,10 @@ const Home = () => {
                     <Jobs />
                 </TabsContent>
                 <TabsContent value={value} index={"trending"}>
-                    Trending
+                    <span>Trending</span>
                 </TabsContent>
                 <TabsContent value={value} index={"discover"}>
-                    Discover
+                    <span>Discover</span>
                 </TabsContent>
             </Container>
         </div>

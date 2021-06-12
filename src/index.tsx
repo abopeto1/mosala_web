@@ -6,10 +6,15 @@ import {Router} from "@reach/router";
 import 'assets/css/mosala-web.css'
 import '@fontsource/roboto';
 import 'react-perfect-scrollbar/dist/css/styles.min.css'
+import Home from "./views/Home/Home";
+import {Profile} from "./views/Profile/Profile";
 
 ReactDOM.render(
   <Router>
-    <App path={"/"} />
+    <App path={"/"}>
+        <Home path={"/"} />
+        <Profile path={"profile"} />
+    </App>
   </Router>,
   document.getElementById('root')
 );

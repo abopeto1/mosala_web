@@ -3,21 +3,21 @@ import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import appStyle from "../assets/jss/layout/appStyle";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {switchRoutes} from "../utils/switchRoutes";
-import {appRoutes} from "../routes";
 import PerfectScrollbar from "perfect-scrollbar";
 
 type Props = {
-    path: string
+    path: string;
+    children: JSX.Element | JSX.Element[];
 }
 
 let ps: PerfectScrollbar
 // @ts-ignore
 const useStyles = makeStyles(appStyle)
 
-export const App: React.VoidFunctionComponent<Props> = ({path}: Props) => {
+export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
     const classes = useStyles()
 
+    console.log(children)
     const mainPanel = React.createRef<HTMLDivElement>();
 
     // initialize and destroy the PerfectScrollbar plugin
@@ -43,7 +43,10 @@ export const App: React.VoidFunctionComponent<Props> = ({path}: Props) => {
         <div className={classes.wrapper} ref={mainPanel}>
             <CssBaseline />
             <Header />
-            <div style={{paddingTop: "64px",}} >{switchRoutes(appRoutes)}</div>
+            <div style={{paddingTop: "64px",}} >
+                {/*{switchRoutes(appRoutes)}*/}
+                {children}
+            </div>
         </div>
   );
 }

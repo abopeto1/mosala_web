@@ -9,9 +9,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import {Theme} from "@material-ui/core";
+import {blackColor, grayColor, title} from "../mosala-web";
 
 export const listStyle = (theme: Theme) => ({
     root: {},
+    title: {
+        ...title,
+        fontWeight: 600,
+        color: blackColor,
+        marginTop: 0,
+        marginBottom: 0,
+        fontSize: ".95rem",
+    },
+    subTitle: {
+        fontSize: ".8rem",
+        marginTop: 0,
+        marginBottom: theme.spacing(1),
+        color: grayColor[0]
+    },
     container: {
         display: "grid",
         gridGap: "20px 0",
@@ -57,5 +72,19 @@ export const listStyle = (theme: Theme) => ({
         // "&::-webkit-scrollbar":{
         //     display: "none",
         // }
+    },
+    skillNote:{
+        ...title,
+        fontWeight: 600,
+        color: blackColor,
+        marginTop: 0,
+        marginBottom: 0,
+        fontSize: ".95rem",
+        "&::before": {
+            // eslint-disable-next-line no-octal-escape
+            content: "'\\2022'",
+            margin: "0 6px",
+            color: grayColor[0],
+        }
     }
 })

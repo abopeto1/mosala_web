@@ -13,8 +13,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import appMenuStyle from "../../assets/jss/components/appMenuStyle";
 import MenuList from "@material-ui/core/MenuList";
 import {
-    DashboardOutlined,MessageOutlined,
-    Notifications, PeopleOutlineOutlined,
+    DashboardOutlined, MessageOutlined, NotificationsOutlined, PeopleOutlineOutlined,
     SettingsOutlined,
 } from "@material-ui/icons";
 
@@ -22,16 +21,18 @@ const useStyles = makeStyles(appMenuStyle)
 
 const menus = [
     {
-        title: "Home",
+        title: "My Network",
         icon: PeopleOutlineOutlined,
+        path: "/network",
     },
     {
-        title: "My Network",
+        title: "Messages",
         icon: MessageOutlined,
+        path: "/messages"
     },
     {
         title: "Jobs",
-        icon: Notifications,
+        icon: NotificationsOutlined,
     },
     {
         title: "Messaging",

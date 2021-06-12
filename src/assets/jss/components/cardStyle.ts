@@ -14,7 +14,11 @@ import {blackColor, blueColor, grayColor, title} from "../mosala-web";
 
 const cardStyle = (theme: Theme) => ({
     root: {
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+    },
+    headerRoot: {
+        padding: 0,
     },
     title: {
         ...title,
@@ -22,7 +26,7 @@ const cardStyle = (theme: Theme) => ({
         color: blackColor,
         marginTop: 0,
         marginBottom: 0,
-        fontSize: ".95rem",
+        fontSize: "1rem",
     },
     content: {
         paddingLeft: 0,
@@ -71,6 +75,12 @@ const cardStyle = (theme: Theme) => ({
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2),
         }
+    },
+    cardMedia: {
+        width: 450,
+    },
+    companyCardMedia: {
+        height: 250,
     }
 })
 

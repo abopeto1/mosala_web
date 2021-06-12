@@ -15,21 +15,32 @@ import cardStyle from "../../assets/jss/components/cardStyle";
 
 type AppCardProps = {
     title?: string,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    action?: React.ReactNode,
 }
 
 // @ts-ignore
 const useStyles = makeStyles(cardStyle)
 
-const AppCard = ({title, children}: AppCardProps) => {
+const AppCard = ({title, children, action}: AppCardProps) => {
     const classes = useStyles()
 
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                title={<Typography className={classes.title}>{title}</Typography>}
-            />
-            <Divider />
+        <Card className={classes.root} variant={"outlined"}>
+            {
+                (title || action) && (
+                    <CardHeader
+                        title={<Typography className={classes.title}>{title}</Typography>}
+                        action={action}
+                        classes={{
+                            root: classes.headerRoot,
+                        }}
+                    />
+                )
+            }
+            {
+                (title || action) && <Divider />
+            }
             <CardContent className={classes.content}>
                 {children}
             </CardContent>

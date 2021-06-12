@@ -12,9 +12,10 @@ import React from "react";
 type TabsContentProps = {
     value: string;
     index: string|number;
+    children: any; // JSX.Element | JSX.Element[] | undefined
 }
 
-export const TabsContent: React.FC<TabsContentProps> = (props) => {
+export const TabsContent: React.VFC<TabsContentProps> = (props) => {
     const {children, value, index} = props
 
     return (

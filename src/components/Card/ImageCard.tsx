@@ -15,7 +15,7 @@ import cardStyle from "../../assets/jss/components/cardStyle";
 
 type ImageCardProps = {
     image: string;
-    headTitle: string;
+    headTitle: string | JSX.Element;
     subTitle?: string;
     action?: React.ReactNode,
 }
