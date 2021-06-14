@@ -8,14 +8,21 @@ import '@fontsource/roboto';
 import 'react-perfect-scrollbar/dist/css/styles.min.css'
 import Home from "./views/Home/Home";
 import {Profile} from "./views/Profile/Profile";
+import {Provider} from "react-redux";
+import getStore from "./apiState";
+
+const store = getStore({}, {debug: true})
 
 ReactDOM.render(
-  <Router>
-    <App path={"/"}>
-        <Home path={"/"} />
-        <Profile path={"profile"} />
-    </App>
-  </Router>,
+    <Provider store={store}>
+        <Router>
+            <App path={"/"}>
+                <Home path={"/"} />
+                <Profile path={"profile"} />
+            </App>
+        </Router>
+    </Provider>
+  ,
   document.getElementById('root')
 );
 
