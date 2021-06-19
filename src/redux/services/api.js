@@ -6,7 +6,7 @@ import axios from 'axios';
 import { computeUrl } from '../utils';
 
 const api = (method, action) => {
-  const url = `http://localhost:8000/${computeUrl(method, action)}`;
+  const url = `${process.env.REACT_APP_API_URL}${computeUrl(method, action)}/`;
 
   const headers = method === 'GET'
     ? {}

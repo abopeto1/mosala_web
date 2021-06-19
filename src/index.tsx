@@ -9,7 +9,7 @@ import 'react-perfect-scrollbar/dist/css/styles.min.css'
 import Home from "./views/Home/Home";
 import {Profile} from "./views/Profile/Profile";
 import {Provider} from "react-redux";
-import getStore from "./redux";
+import getStore from './redux'
 
 const store = getStore({}, {debug: true})
 

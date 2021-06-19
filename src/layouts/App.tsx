@@ -17,7 +17,6 @@ const useStyles = makeStyles(appStyle)
 export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
     const classes = useStyles()
 
-    console.log(children)
     const mainPanel = React.createRef<HTMLDivElement>();
 
     // initialize and destroy the PerfectScrollbar plugin

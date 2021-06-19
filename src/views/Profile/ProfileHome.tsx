@@ -17,8 +17,7 @@ import {IconButton, List} from "@material-ui/core";
 import ImageCard from "../../components/Card/ImageCard";
 import image from "../../assets/images/adele.jpg"
 import {Link} from "@reach/router";
-import {EditOutlined} from "@material-ui/icons";
-import {JobCard} from "../../components/Card/JobCard";
+import {EditOutlined} from "@material-ui/icons"
 import SkillListItem from "../../components/ListItem/SkillListItem";
 import RecommendationCard from "../../components/Card/RecommendationCard/RecommendationCard";
 import {CompanyCardEntity} from "../../components/Card/CompanyCardEntity/CompanyCardEntity";
@@ -71,15 +70,15 @@ const ProfileHome = () => {
                     <Grid item>
                         <AppCard title={"Experience"}>
                             <Grid container direction={"column"} spacing={2}>
-                                <Grid item>
-                                    <JobCard />
-                                </Grid>
-                                <Grid item>
-                                    <JobCard />
-                                </Grid>
-                                <Grid item>
-                                    <JobCard />
-                                </Grid>
+                                {/*<Grid item>*/}
+                                {/*    <JobCard />*/}
+                                {/*</Grid>*/}
+                                {/*<Grid item>*/}
+                                {/*    <JobCard />*/}
+                                {/*</Grid>*/}
+                                {/*<Grid item>*/}
+                                {/*    <JobCard />*/}
+                                {/*</Grid>*/}
                             </Grid>
                         </AppCard>
                     </Grid>
@@ -87,12 +86,12 @@ const ProfileHome = () => {
                     <Grid item>
                         <AppCard title={"Education"}>
                             <Grid container direction={"column"} spacing={2}>
-                                <Grid item>
-                                    <JobCard />
-                                </Grid>
-                                <Grid item>
-                                    <JobCard />
-                                </Grid>
+                                {/*<Grid item>*/}
+                                {/*    <JobCard />*/}
+                                {/*</Grid>*/}
+                                {/*<Grid item>*/}
+                                {/*    <JobCard />*/}
+                                {/*</Grid>*/}
                             </Grid>
                         </AppCard>
                     </Grid>

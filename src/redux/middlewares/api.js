@@ -6,6 +6,7 @@ import api from '../services/api';
  */
 const apiMiddleware = store => next => (action) => {
   let method = null;
+
   const { type } = action;
   if (type.startsWith('REQUEST_READ_')) {
     method = 'GET';
@@ -23,9 +24,10 @@ const apiMiddleware = store => next => (action) => {
   if (method) {
     api(method, action)
       .then((response) => {
+
         store.dispatch({
           type: action.type.replace('REQUEST', 'SUCCESS'),
-          payload: response,
+          payload: response.results,
           meta: action.meta,
         });
         return response;

@@ -19,7 +19,9 @@ import AppTabs from "../../components/Tabs/Tabs";
 import jobsOptions from "../../variables/jobsOptions";
 import {TabsContent} from "../../components/Tabs/TabsContent";
 import {HorizList} from "../../components/List/HorizList";
-import {JobCard} from "../../components/Card/JobCard";
+// import {JobCard} from "../../components/Card/JobCard";
+import Entities from "react-redux/Entity/Read/Entities"
+import JobList from "../../components/List/JobList";
 
 const useStyles = makeStyles(jobsStyle)
 
@@ -65,26 +67,20 @@ const Jobs = () => {
                     />
                     <TabsContent value={value} index={jobsOptions[0].name.toLowerCase()}>
                         <HorizList />
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <JobCard />
-                            </Grid>
-                        </Grid>
+                        <Entities entityName={"job"} params={{}}>
+                            {
+                                (rest: any) => {
+                                    console.log(rest)
+                                    return (
+                                        <JobList
+                                            jobs={rest.entities || []}
+                                            read={rest.read}
+                                            listStatus={rest.status}
+                                        />
+                                    )
+                                }
+                            }
+                        </Entities>
                     </TabsContent>
                 </Paper>
             </Grid>
@@ -92,12 +88,12 @@ const Jobs = () => {
                 <div className={classes.headTitle}>Because you viewed</div>
                 <div className={classes.subTitle}>Visual designer at Google</div>
                 <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <JobCard />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <JobCard />
-                    </Grid>
+                    {/*<Grid item xs={12}>*/}
+                    {/*    <JobCard />*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={12}>*/}
+                    {/*    <JobCard />*/}
+                    {/*</Grid>*/}
                 </Grid>
             </Grid>
         </Grid>

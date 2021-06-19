@@ -6,8 +6,21 @@ import {
   removeChildFromParent,
 } from './helpers';
 import { parentOf } from '../utils/schema';
+import {ISubReducer} from "./index";
 
-const byId = entityName => (state = {}, action) => {
+interface IAction {
+  type: string
+  meta: {
+    entityName: string;
+    parentName?: string
+  }
+  payload: {
+    entities: Array<ISubReducer>;
+    result: {}
+  }
+}
+
+const byId = (entityName: string) => (state = {}, action: IAction) => {
   if (!action.type.startsWith('SUCCESS_')) {
     return state;
   }
@@ -37,7 +50,7 @@ const byId = entityName => (state = {}, action) => {
     return state;
   }
 
-
+  // @ts-ignore
   return mergeByIds(state, action.payload.entities[entityName]);
 };
 

@@ -14,10 +14,23 @@ import {AvatarGroup} from '@material-ui/lab'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import cardStyle from "../../assets/jss/components/cardStyle";
 import {LocalActivity} from "@material-ui/icons";
+import moment from "moment";
+
+interface IJob {
+    id: number
+    title: string
+    date_posted: string
+}
+
+interface IJobCard {
+    job: IJob
+}
 
 const useStyles = makeStyles(cardStyle)
 
-export const JobCard = () => {
+export const JobCard = (props: IJobCard) => {
+    const {job} = props
+
     const classes = useStyles()
 
     return (
@@ -25,7 +38,7 @@ export const JobCard = () => {
             <Grid container justify={"space-between"}>
                 <Grid item>
                     <div className={classes.jobInfos}>
-                        <span className={classes.headTitle}>Interaction Designer</span>
+                        <span className={classes.headTitle}>{job.title}</span>
                         <span className={classes.company}>Google</span>
                         <span className={classes.subTitle}>Shangai, CN</span>
                     </div>
@@ -48,7 +61,7 @@ export const JobCard = () => {
                 </Grid>
             </Grid>
             <Divider />
-            <time>Posted 3 days ago</time>
+            <time>Posted {moment(job.date_posted, 'YYYYMMDD').fromNow()}</time>
         </Paper>
     )
 }

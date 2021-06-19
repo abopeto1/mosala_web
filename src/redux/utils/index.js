@@ -19,10 +19,10 @@ export const computeUrl = (method, action) => {
     return `${parentName}/${parentId}/${entityName}/${entityIds}`;
   }
   if (method === 'GET' && action.meta.type === 'multi') {
-    return `${action.meta.entityName}`;
+    return `${action.meta.entityName}s`;
   }
   if (method === 'GET' || method === 'PUT') {
-    return `${action.meta.entityName}/${action.meta.identifier}`;
+    return `${action.meta.entityName}s/${action.meta.identifier}`;
   }
   if (method === 'POST') {
     return `${action.meta.entityName}`;
