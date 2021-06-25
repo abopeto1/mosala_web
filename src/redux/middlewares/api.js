@@ -27,7 +27,7 @@ const apiMiddleware = store => next => (action) => {
 
         store.dispatch({
           type: action.type.replace('REQUEST', 'SUCCESS'),
-          payload: response.results,
+          payload: response.results || response,
           meta: action.meta,
         });
         return response;

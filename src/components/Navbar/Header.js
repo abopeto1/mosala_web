@@ -38,7 +38,7 @@ const Header = (props) => {
                         <Grid item sm={2} style={{alignSelf: "center"}}>
                             <Grid container>
                                 {/* logo */}
-                                <Button color={"transparent"} href={"#"} className={classes.title}>
+                                <Button color={"transparent"} href={"/"} className={classes.title}>
                                     <img src={logo} width={48} alt={"logo"} />
                                     Mosala
                                 </Button>

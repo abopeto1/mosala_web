@@ -1,9 +1,10 @@
 import Header from "../components/Navbar/Header";
-import React from "react";
+import React, {Fragment, useState} from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import appStyle from "../assets/jss/layout/appStyle";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import PerfectScrollbar from "perfect-scrollbar";
+import Login from "../views/Login/Login";
 
 type Props = {
     path: string;
@@ -16,6 +17,8 @@ const useStyles = makeStyles(appStyle)
 
 export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
     const classes = useStyles()
+
+    const [userId, setUserId] = useState<string>(localStorage.userId)
 
     const mainPanel = React.createRef<HTMLDivElement>();
 
@@ -41,11 +44,19 @@ export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
     return (
         <div className={classes.wrapper} ref={mainPanel}>
             <CssBaseline />
-            <Header />
-            <div style={{paddingTop: "64px",}} >
-                {/*{switchRoutes(appRoutes)}*/}
-                {children}
-            </div>
+            {
+                userId ? (
+                    <Fragment>
+                        <Header />
+                        <div style={{paddingTop: "54px",}} >
+                            {/*{switchRoutes(appRoutes)}*/}
+                            {children}
+                        </div>
+                    </Fragment>
+                ) : (
+                    <Login changeUserId={(val: string) => setUserId(val)} />
+                )
+            }
         </div>
   );
 }

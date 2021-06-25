@@ -70,7 +70,6 @@ const Jobs = () => {
                         <Entities entityName={"job"} params={{}}>
                             {
                                 (rest: any) => {
-                                    console.log(rest)
                                     return (
                                         <JobList
                                             jobs={rest.entities || []}

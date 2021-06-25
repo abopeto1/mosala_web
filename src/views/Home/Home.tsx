@@ -14,7 +14,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import homeStyle from "../../assets/jss/views/homeStyle";
 import HomeMenu from "../../components/Navbar/HomeMenu";
 import Feed from "./Feed";
-import Jobs from "./Jobs";
+import Jobs from "../Job/Jobs";
 import {TabsContent} from "../../components/Tabs/TabsContent";
 import {RouteComponentProps} from "@reach/router";
 

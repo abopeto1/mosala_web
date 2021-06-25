@@ -24,6 +24,7 @@ const jobsStyle = (theme: Theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: 0,
         fontSize: "1rem",
+        "text-transform": "capitalize",
     },
     subTitle: {
         fontSize: ".8rem",
@@ -32,6 +33,10 @@ const jobsStyle = (theme: Theme) => ({
         color: grayColor[0],
         "margin-bottom": theme.spacing(2)
     },
+    heroImage: {
+        background: grayColor[1],
+        height: 250,
+    }
 })
 
 export default jobsStyle

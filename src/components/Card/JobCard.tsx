@@ -15,12 +15,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import cardStyle from "../../assets/jss/components/cardStyle";
 import {LocalActivity} from "@material-ui/icons";
 import moment from "moment";
-
-interface IJob {
-    id: number
-    title: string
-    date_posted: string
-}
+import {Link} from "@reach/router";
 
 interface IJobCard {
     job: IJob
@@ -38,13 +33,13 @@ export const JobCard = (props: IJobCard) => {
             <Grid container justify={"space-between"}>
                 <Grid item>
                     <div className={classes.jobInfos}>
-                        <span className={classes.headTitle}>{job.title}</span>
-                        <span className={classes.company}>Google</span>
+                        <Link to={`/jobs/${job.id}`} className={classes.headTitle}>{job.title}</Link>
+                        <span className={classes.company}>{job.company.name}</span>
                         <span className={classes.subTitle}>Shangai, CN</span>
                     </div>
                 </Grid>
                 <Grid item>
-                    <Avatar  variant={"square"}><LocalActivity /></Avatar>
+                    <Avatar src={job.company.profile_picture} variant={"square"}><LocalActivity /></Avatar>
                 </Grid>
             </Grid>
             <Grid container spacing={2} alignItems={"center"}>
@@ -57,7 +52,7 @@ export const JobCard = (props: IJobCard) => {
                     </AvatarGroup>
                 </Grid>
                 <Grid item>
-                    <span className={classes.company}>18 Connections</span>
+                    <span className={classes.company}>18 Candidates</span>
                 </Grid>
             </Grid>
             <Divider />

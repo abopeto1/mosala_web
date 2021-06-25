@@ -18,11 +18,14 @@ export interface IAppState {
 // and the value being the entity name
 export const schema = {
   job: {
-    define: [{ created_by: 'user' },],
+    define: [{ created_by: 'user',}, 'company'],
   },
   user: {
     define: ['posts'],
   },
+  company: {
+    define: ['jobs']
+  }
 };
 
 export const entitiesSchema = computeSchema(schema);

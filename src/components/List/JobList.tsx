@@ -34,7 +34,7 @@ const JobList = (props: IJobListProps) => {
                 ) : (
                     jobs.map((job, index) => (
                         <Grid item xs={12} sm={6} key={index}>
-                            <JobCard  job={job}/>
+                            <JobCard job={job}/>
                         </Grid>
                     ))
                 )

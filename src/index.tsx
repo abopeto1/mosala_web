@@ -10,8 +10,9 @@ import Home from "./views/Home/Home";
 import {Profile} from "./views/Profile/Profile";
 import {Provider} from "react-redux";
 import getStore from './redux'
+import Job from "./views/Job/Job";
 
-const store = getStore({}, {debug: true})
+const store = getStore({}, {debug: false})
 
 ReactDOM.render(
     <Provider store={store}>
@@ -19,6 +20,7 @@ ReactDOM.render(
             <App path={"/"}>
                 <Home path={"/"} />
                 <Profile path={"profile"} />
+                <Job path={'jobs/:job_id'} />
             </App>
         </Router>
     </Provider>

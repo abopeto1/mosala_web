@@ -28,6 +28,7 @@ const getReducers = (reducerName: string) => (
 );
 
 const entities = combineReducers({
+    company: getReducers('company'),
     job: getReducers('job'),
     user: getReducers('user'),
 });

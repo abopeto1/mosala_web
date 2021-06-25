@@ -4,7 +4,7 @@ import { getToggleType, getToggleKey } from './helpers';
 /**
  * Computes action creator
  * @param  {string} entityName - Any entity type in the system e.g. 'user', 'group' e.t.c
- * @param  {integer} entityId  - The id of the entity to be read
+ * @param  {int} entityId  - The id of the entity to be read
  * @param  {Object} options    - onSuccess and onFail function could be passed here
  * @param  {String} actionType - 'read' | 'update' | 'create' | 'delete'
  * @param  {Boolean} single    - Acting on single entity (false if acting on multiple entities)
