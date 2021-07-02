@@ -24,13 +24,13 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   create(body, options = {}) {
     const enhancedOptions = {
       ...options,
-      onSuccess: () => {
-        if (options.onSuccess) {
-          options.onSuccess();
-        }
-        // We need to get a new uuid on success
-        ownProps.refreshUuid();
-      },
+      // onSuccess: () => {
+      //   if (options.onSuccess) {
+      //     options.onSuccess();
+      //   }
+      //   // We need to get a new uuid on success
+      //   // ownProps.refreshUuid();
+      // },
     };
     dispatch(
       createEntity(

@@ -1,5 +1,5 @@
 import Header from "../components/Navbar/Header";
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import appStyle from "../assets/jss/layout/appStyle";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,16 +9,30 @@ import Login from "../views/Login/Login";
 type Props = {
     path: string;
     children: JSX.Element | JSX.Element[];
+    getUser: (o?: any) => void
 }
 
 let ps: PerfectScrollbar
 // @ts-ignore
 const useStyles = makeStyles(appStyle)
 
-export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
-    const classes = useStyles()
+export const UserContext = React.createContext<any>({})
 
-    const [userId, setUserId] = useState<string>(localStorage.userId)
+export const App: React.VoidFunctionComponent<Props> = ({children, getUser}: Props) => {
+    // const [open, setOpen] = useState(false)
+    const classes = useStyles()
+    const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.currentUser))
+
+    // get_current_user
+    useEffect(() => {
+        getUser({
+            onSuccess: (r: any) => {
+                localStorage.currentUser = JSON.stringify(r)
+                setCurrentUser(r)
+            },
+            onFail: (e: any) => console.log(e)
+        })
+    }, [])
 
     const mainPanel = React.createRef<HTMLDivElement>();
 
@@ -44,19 +58,21 @@ export const App: React.VoidFunctionComponent<Props> = ({children}: Props) => {
     return (
         <div className={classes.wrapper} ref={mainPanel}>
             <CssBaseline />
-            {
-                userId ? (
-                    <Fragment>
-                        <Header />
-                        <div style={{paddingTop: "54px",}} >
-                            {/*{switchRoutes(appRoutes)}*/}
-                            {children}
-                        </div>
-                    </Fragment>
-                ) : (
-                    <Login changeUserId={(val: string) => setUserId(val)} />
-                )
-            }
+            <UserContext.Provider value={{ currentUser, setCurrentUser }} >
+                {
+                    currentUser ? (
+                        <Fragment>
+                            <Header />
+                            <div style={{paddingTop: "54px",}} >
+                                {/*{switchRoutes(appRoutes)}*/}
+                                {children}
+                            </div>
+                        </Fragment>
+                    ) : (
+                        <Login />
+                    )
+                }
+            </UserContext.Provider>
         </div>
   );
 }

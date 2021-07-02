@@ -9,6 +9,8 @@ const groups = new schema.Array(group);
 const tag = new schema.Entity('tag');
 const tags = new schema.Array(tag);
 
+const token = new schema.Entity('token')
+
 user.define({
   groups,
   tags,
@@ -20,6 +22,7 @@ group.define({
 });
 
 export default {
+  token,
   user,
   users,
   group,

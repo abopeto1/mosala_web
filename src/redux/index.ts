@@ -17,15 +17,18 @@ export interface IAppState {
 // is the same as the entity name or an object with the key being the field name
 // and the value being the entity name
 export const schema = {
+  company: {
+    define: ['jobs']
+  },
   job: {
     define: [{ created_by: 'user',}, 'company'],
+  },
+  token:{
+    define:[],
   },
   user: {
     define: ['posts'],
   },
-  company: {
-    define: ['jobs']
-  }
 };
 
 export const entitiesSchema = computeSchema(schema);

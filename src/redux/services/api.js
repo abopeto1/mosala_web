@@ -20,6 +20,7 @@ const api = (method, action) => {
     config.data = action.body;
   }
 
+
   return axios
     .request(config)
     .then(response => response.data);

@@ -25,7 +25,12 @@ export const computeUrl = (method, action) => {
     return `${action.meta.entityName}s/${action.meta.identifier}`;
   }
   if (method === 'POST') {
-    return `${action.meta.entityName}`;
+    switch (action.meta.entityName) {
+      case 'token':
+        return 'token'
+      default:
+        return `${action.meta.entityName}`
+    }
   }
   if (method === 'DELETE') {
     return `${action.meta.entityName}/${action.params.id}`;

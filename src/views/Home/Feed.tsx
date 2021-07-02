@@ -17,9 +17,7 @@ import CreatePost from "../../components/Post/CreatePost";
 import AppCard from "../../components/Card/AppCard";
 import PeopleToConnectListItem from "../../components/People/PeopleToConnectListItem";
 import {List} from "@material-ui/core";
-import ImageCard from "../../components/Card/ImageCard";
-import image from "../../assets/images/adele.jpg"
-import {Link} from "@reach/router";
+import ProfileResume from "../Profile/ProfileResume";
 
 const useStyles = makeStyles(feedStyle)
 
@@ -29,23 +27,7 @@ const Feed = () => {
     return (
         <Grid container spacing={4}>
             <Grid item sm={3} className={classes.column}>
-                <ImageCard
-                    image={image}
-                    headTitle={<Link to={"/profile"}>Adele Adkins</Link>}
-                    subTitle={"Interaction Designer @Google"}
-                    action={
-                        <div>
-                            <Grid container justify={"space-between"} className={classes.stats}>
-                                <Grid item>Connection</Grid>
-                                <Grid item className={"number"}>564</Grid>
-                            </Grid>
-                            <Grid container justify={"space-between"} className={classes.stats}>
-                                <Grid item>Profile Views</Grid>
-                                <Grid item className={"number"}>81</Grid>
-                            </Grid>
-                        </div>
-                    }
-                />
+                <ProfileResume />
                 <PeopleViewedCardList />
             </Grid>
             <Grid item sm={6} className={classes.column}>

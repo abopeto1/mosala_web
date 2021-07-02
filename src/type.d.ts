@@ -16,7 +16,7 @@ interface IInputProps{
 
 interface IEntityProps {
     entityName: string,
-    id: string | number
+    id: string | number | null
     options?: any
 }
 // Job Types
