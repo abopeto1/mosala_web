@@ -9,44 +9,41 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import React from "react";
-import {Avatar, Button, Grid, ListItem, ListItemText} from "@material-ui/core";
+import {Avatar, Button, Grid, ListItemText} from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import peopleStyle from "../../assets/jss/views/peopleStyle";
+import {Add} from "@material-ui/icons";
 
 // @ts-ignore
 const useStyles = makeStyles(peopleStyle)
 
-const PeopleToConnectListItem = () => {
+type SuggestPeopleCardState = {
+    user: UserState
+}
+
+const SuggestPeopleCard = ({user}: SuggestPeopleCardState) => {
     const classes = useStyles()
 
     return (
-        <ListItem className={classes.listItem}>
             <Grid container spacing={2} alignItems={"center"}>
-                <Grid item xs={2} sm={2} md={2}><Avatar>T</Avatar></Grid>
-                <Grid item sm={6}>
+                <Grid item xs={3} sm={3} md={3}><Avatar style={{width: 60, height: 60,}}>T</Avatar></Grid>
+                <Grid item sm={9}>
                     <ListItemText
                         classes={{
                             primary: classes.name,
                         }}
-                        primary={"Tobia Capello"}
+                        primary={user.full_name}
                         secondary={"Product Designer at Yelp"}
                     />
+                    <Button variant={"outlined"} size={"small"} className={classes.buttonGradient} startIcon={<Add />}>Add</Button>
                 </Grid>
-                <Grid item sm={4}>
-                    <div>
-                        <Button variant={"outlined"} size={"small"} className={classes.buttonGradient}>Connect</Button>
-                    </div>
-                </Grid>
+                {/*<Grid item sm={4}>*/}
+                {/*    <div>*/}
+                {/*        <Button variant={"outlined"} size={"small"} className={classes.buttonGradient} startIcon={<Add />}>Add</Button>*/}
+                {/*    </div>*/}
+                {/*</Grid>*/}
             </Grid>
-            {/*<ListItemAvatar>*/}
-            {/*    <Avatar>R</Avatar>*/}
-            {/*</ListItemAvatar>*/}
-
-            {/*<ListItemSecondaryAction>*/}
-            {/*    <Button variant={"outlined"}>Connect</Button>*/}
-            {/*</ListItemSecondaryAction>*/}
-        </ListItem>
     )
 }
 
-export default PeopleToConnectListItem
+export default SuggestPeopleCard

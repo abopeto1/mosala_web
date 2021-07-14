@@ -19,6 +19,24 @@ interface IEntityProps {
     id: string | number | null
     options?: any
 }
+
+interface IEntitiesProp {
+    entityName: string,
+    id: string | number | null
+    params: any
+}
+
+interface IEntityChildProps {
+    getEntity: (options?: any) => void
+    status: boolean
+}
+
+interface IEntitiesChildProps {
+    getEntities: (options?: any) => void
+    status: boolean
+    entities: any
+
+}
 // Job Types
 interface IJob {
     id: number
@@ -42,3 +60,22 @@ type JobAction = {
 }
 
 type JobDispatchType = (args: JobAction) => JobAction
+
+/**
+ * User
+ */
+// User
+type UserState = {
+    "url": string,
+    "id": number,
+    "first_name": string,
+    "last_name": string,
+    full_name: string,
+    infos: any,
+    relationships_accepted_count?: number
+    profile_views?: number
+}
+// Profile
+interface IProfileResumeProps extends IEntityChildProps {
+    userProfile: UserState
+}

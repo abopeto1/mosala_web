@@ -13,6 +13,7 @@ type Props = {
 }
 
 let ps: PerfectScrollbar
+let localCurrentUser = localStorage.currentUser ? JSON.parse(localStorage.currentUser) : undefined
 // @ts-ignore
 const useStyles = makeStyles(appStyle)
 
@@ -21,7 +22,13 @@ export const UserContext = React.createContext<any>({})
 export const App: React.VoidFunctionComponent<Props> = ({children, getUser}: Props) => {
     // const [open, setOpen] = useState(false)
     const classes = useStyles()
-    const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.currentUser))
+    const [currentUser, setCurrentUser] = useState(localCurrentUser)
+
+    useEffect(() => {
+        if (!currentUser || currentUser === {}){
+            localStorage.clear()
+        }
+    }, [currentUser])
 
     // get_current_user
     useEffect(() => {
@@ -32,6 +39,7 @@ export const App: React.VoidFunctionComponent<Props> = ({children, getUser}: Pro
             },
             onFail: (e: any) => console.log(e)
         })
+        // eslint-disable-next-line
     }, [])
 
     const mainPanel = React.createRef<HTMLDivElement>();

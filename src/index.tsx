@@ -24,6 +24,7 @@ axios.interceptors.request.use(
         return config
     },
     (error) => {
+        console.log(error)
         return Promise.reject(error)
     }
 )
@@ -32,7 +33,6 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(undefined, error => {
     const originalRequest = error.config
     let refreshToken = localStorage.getItem('refresh_token')
-        console.log(error.response)
         if (refreshToken && error.response.status === 401 && !originalRequest._retries){
             originalRequest._retries = true
             return axios.post(`${process.env.REACT_APP_API_URL}token/refresh/`, {refresh: refreshToken}).then(

@@ -15,9 +15,8 @@ import feedStyle from "../../assets/jss/components/feedStyle";
 import {Post} from "../../components/Post/Post";
 import CreatePost from "../../components/Post/CreatePost";
 import AppCard from "../../components/Card/AppCard";
-import PeopleToConnectListItem from "../../components/People/PeopleToConnectListItem";
-import {List} from "@material-ui/core";
 import ProfileResume from "../Profile/ProfileResume";
+import SuggestPeople from "../../components/People/SuggestPeople";
 
 const useStyles = makeStyles(feedStyle)
 
@@ -40,13 +39,7 @@ const Feed = () => {
             </Grid>
             <Grid item sm={3}>
                 <AppCard title={"People you might know"}>
-                    <List dense>
-                        {
-                            [0,1,2,3].map(a => (
-                                <PeopleToConnectListItem key={a} />
-                            ))
-                        }
-                    </List>
+                    <SuggestPeople />
                 </AppCard>
             </Grid>
         </Grid>

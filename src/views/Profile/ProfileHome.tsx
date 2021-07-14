@@ -12,8 +12,7 @@ import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import feedStyle from "../../assets/jss/components/feedStyle";
 import AppCard from "../../components/Card/AppCard";
-import PeopleToConnectListItem from "../../components/People/PeopleToConnectListItem";
-import {IconButton, List} from "@material-ui/core";
+import {IconButton,} from "@material-ui/core";
 import ImageCard from "../../components/Card/ImageCard";
 import image from "../../assets/images/adele.jpg"
 import {Link} from "@reach/router";
@@ -21,6 +20,7 @@ import {EditOutlined} from "@material-ui/icons"
 import SkillListItem from "../../components/ListItem/SkillListItem";
 import RecommendationCard from "../../components/Card/RecommendationCard/RecommendationCard";
 import {CompanyCardEntity} from "../../components/Card/CompanyCardEntity/CompanyCardEntity";
+import SuggestPeople from "../../components/People/SuggestPeople";
 
 const useStyles = makeStyles(feedStyle)
 
@@ -132,13 +132,7 @@ const ProfileHome = () => {
             </Grid>
             <Grid item sm={3} className={classes.column}>
                 <AppCard title={"Who viewed your profile"}>
-                    <List dense>
-                        {
-                            [0,1,2,3].map(a => (
-                                <PeopleToConnectListItem key={a} />
-                            ))
-                        }
-                    </List>
+                    <SuggestPeople />
                 </AppCard>
             </Grid>
         </Grid>

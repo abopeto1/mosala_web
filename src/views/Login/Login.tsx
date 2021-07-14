@@ -18,23 +18,34 @@ import {useFormik} from "formik";
 import * as Yup from 'yup'
 import {UserContext} from "../../layouts/App";
 
-interface ILoginPage {
+interface ILoginPage extends ILogin {
     create: (data: any, options?: any) => void
     createdEntity: any,
+}
+
+interface ILogin {
+    getUser: (o?: any) => void
 }
 
 const LoginPage = (rest: ILoginPage) => {
     const {setCurrentUser} = useContext(UserContext)
 
     const formik = useFormik({
-        onSubmit: (values) => {
+        onSubmit: (values, {setSubmitting}) => {
             rest.create(values, {
-                onSuccess: (d: {access: string, refresh: string}) => {
+                onSuccess: (d: {access: string, refresh: string, user: any}) => {
                     localStorage.setItem('access_token', d.access)
                     localStorage.setItem('refresh_token', d.refresh)
-                    setCurrentUser({email: 'a', first_name: 'bb', last_name: 'fre'})
+                    localStorage.setItem('current_user',JSON.stringify(d.user))
+
+                    setCurrentUser(d.user)
+                    setSubmitting(false)
                 },
-                onFail: (e: any) => console.log(e)
+                onFail: (e: any) => {
+                    console.log(e)
+                    setSubmitting(false)
+                }
+
             })
         },
         initialValues: {
@@ -78,7 +89,7 @@ const LoginPage = (rest: ILoginPage) => {
                                 <div style={{padding: '0 16px'}}>
                                     <Button
                                         variant={'contained'} color={"primary"} fullWidth
-                                        type={"submit"}
+                                        type={"submit"} disabled={formik.isSubmitting}
                                     >
                                         Login
                                     </Button>
@@ -105,7 +116,7 @@ const LoginPage = (rest: ILoginPage) => {
 
 const Login = () => {
     return (
-        <CreateToken entityName={'token'}>
+        <CreateToken entityName={'login'}>
             {
                 (rest: any) => (
                     <LoginPage {...rest} />

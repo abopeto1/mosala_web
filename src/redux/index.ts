@@ -23,7 +23,7 @@ export const schema = {
   job: {
     define: [{ created_by: 'user',}, 'company'],
   },
-  token:{
+  login:{
     define:[],
   },
   user: {

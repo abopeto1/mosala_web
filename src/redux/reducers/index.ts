@@ -30,7 +30,7 @@ const getReducers = (reducerName: string) => (
 const entities = combineReducers({
     company: getReducers('company'),
     job: getReducers('job'),
-    token: getReducers('token'),
+    login: getReducers('login'),
     user: getReducers('user'),
 });
 
